@@ -1,0 +1,16 @@
+{
+  "name": "ant-demux",
+  "version": "1.0.0",
+  "description": "A demultiplexor API + Express Middleware connector",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Scukerman <nngoblin@gmail.com>",
+  "license": "AII",
+  "dependencies": {
+    "async": "^0.9.0",
+    "bluebird": "^2.3.2",
+    "underscore": "^1.7.0"
+  }
+}
