@@ -48,7 +48,7 @@ var Demux = function(config) {
  * @static
  * @type {string}
  */
-Demux.version = '0.0.1';
+Demux.version = '1.0.2';
 
 /**
  * Adding action.
@@ -136,9 +136,6 @@ Demux.prototype.handleRequests = function(requests, res) {
 			.then(self.executeRequest.bind(self))
 			.then(function(result) { callback(null, {success: true, data: result}); }, function(err) { callback(null, {success: false, message: err}); });
 	}, function(err, results) {
-		//console.log('Results:');
-		//console.log(results);
-
 		// CORS
 		res.header('Access-Control-Allow-Origin', '*');
 		res.header('Access-Control-Allow-Credentials', true);
@@ -148,7 +145,7 @@ Demux.prototype.handleRequests = function(requests, res) {
 };
 
 Demux.prototype.checkRequest = function(request) {
-	if(!_.isObject(request) || !_.has(request, 'action') || !_.has(request, 'args'))
+	if(!_.isObject(request) || !_.has(request, 'action'))
 		throw 'Bad Request';
 
 	return request;
